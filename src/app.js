@@ -28,6 +28,29 @@ app.get('/articles', (req, res, next) => {
         .catch(next)
     })
 
+app.get('/articles/:article_id', (req, res, next) => {
+    // res.json({ 'requested_id': req.params.article_id, this: 'should fail' })
+   const knexInstance = req.app.get('db')
+   ArticlesService.getById(knexInstance, req.params.article_id)
+     .then(article => {
+       if(!article) {
+         return res.status(404).json({
+           error: { message: `Article doesn't exist`}
+         })
+       }
+       res.json(article)
+     })
+     .catch(next)
+    //  !!!!!! Note: This might not pass in windows as the TZ setting isn't respected. You may need to pass the date in the response through a new Date() constructor like so:
+      // res.json({
+      //     id: article.id,
+      //     title: article.title,
+      //     style: article.style,
+      //     content: article.content,
+      //     date_published: new Date(article.date_published),
+      //   })
+  })
+
 
 
 

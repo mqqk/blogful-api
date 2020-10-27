@@ -28,4 +28,5 @@ When your new project is ready for deployment, add a new Heroku application with
 
 SQL Command for seeding
 psql -U dunder_mifflin -d blogful -f ./seeds/seed.blogful_articles.sql
+psql -U dunder_mifflin -d blogful-test -f ./seeds/seed.blogful_articles.sql
 
