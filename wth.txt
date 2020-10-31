@@ -1,0 +1,19 @@
+this was in the section 16 POST and DELETE.... 
+
+not sure where this was supposed to go
+
+
+------------------------------------------
++ expected
+- actual
+
+{
+-  "error": {
+-    "message": "Article doesn't exist"
+-  }
++  "content": "Test new article content..."
++  "id": 12
++  "style": "Listicle"
++  "title": "Test new article"
+}
+------------------------------------------
