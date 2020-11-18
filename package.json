@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "",
   "main": "src/server.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/username/repository.git"
+  },
   "scripts": {
     "test": "mocha --require test/setup.js",
     "dev": "nodemon src/server.js",
